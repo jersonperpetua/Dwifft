@@ -14,7 +14,7 @@ public struct Diff<T> {
     public var deletions: [DiffStep<T>] {
         return results.filter({ !$0.isInsertion }).sort { $0.idx > $1.idx }
     }
-    func reversed() -> Diff<T> {
+    public func reversed() -> Diff<T> {
         let reversedResults = self.results.reverse().map { (result: DiffStep<T>) -> DiffStep<T> in
             switch result {
             case .Insert(let i, let j):
