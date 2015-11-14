@@ -7,7 +7,7 @@
 //
 
 public struct Diff<T> {
-    let results: [DiffStep<T>]
+    public let results: [DiffStep<T>]
     var insertions: [DiffStep<T>] {
         return results.filter({ $0.isInsertion }).sort { $0.idx < $1.idx }
     }
